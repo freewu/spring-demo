@@ -1,0 +1,12 @@
+### 获取用户列表
+GET {{ host }}/user/list
+Accept: application/json
+
+### 添加用户
+POST {{ host }}/user
+Content-Type: application/json
+
+{
+  "name": "bluefrog",
+  "password": "12345678"
+}

@@ -1,0 +1,22 @@
+### 获取配置信息列表 广播表
+GET {{ host }}/config/list
+Accept: application/json
+
+
+### 添加配置信息
+POST {{ host }}/config
+Content-Type: application/json
+
+{
+  "remark": "content"
+}
+
+### 修改配置信息
+POST {{ host }}/config
+Content-Type: application/json
+
+{
+  "id": 3,
+  "remark": "3333"
+}
+

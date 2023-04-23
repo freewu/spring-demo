@@ -1,6 +1,6 @@
 package org.bluefrog.controller;
 
-import org.bluefrog.dao.BlogDAO;
+import org.bluefrog.mapper.BlogMapper;
 import org.bluefrog.domain.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class BlogController {
 
     @Autowired
-    private BlogDAO blogDAO;
+    private BlogMapper blogDAO;
 
     @PostMapping("")
     public Object save(Blog blog) {

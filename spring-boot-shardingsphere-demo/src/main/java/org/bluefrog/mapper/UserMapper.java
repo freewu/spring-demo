@@ -1,15 +1,15 @@
-package org.bluefrog.dao;
+package org.bluefrog.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.bluefrog.domain.User;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
-@Component
-public interface UserDAO {
+@Repository
+public interface UserMapper {
 
     boolean insert(User user);
 

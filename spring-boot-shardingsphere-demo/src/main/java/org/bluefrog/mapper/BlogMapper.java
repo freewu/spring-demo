@@ -1,15 +1,15 @@
-package org.bluefrog.dao;
+package org.bluefrog.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.bluefrog.domain.Blog;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
-@Component
-public interface BlogDAO {
+@Repository
+public interface BlogMapper {
 
     boolean insert(Blog blog);
 
@@ -24,5 +24,4 @@ public interface BlogDAO {
     List<Blog> findByUserId(@Param("userId") Long userId);
 
     boolean deleteById(@Param("id") Long id);
-
 }

@@ -1,13 +1,12 @@
 package org.bluefrog.controller;
 
-import org.bluefrog.dao.UserDAO;
+import org.bluefrog.mapper.UserMapper;
 import org.bluefrog.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,16 +15,16 @@ import java.util.Map;
 public class UserController {
 
     @Autowired
-    private UserDAO orderDAO;
+    private UserMapper orderDAO;
 
     @PostMapping("")
-    public Object save(User user) {
-        if (user == null || StringUtils.isEmpty(user.getName())) {
+    public Object save(@RequestBody User user) {
+        System.out.println(user);
+        if (user == null || !StringUtils.hasText(user.getName())) {
             return "name 不能为空";
-        } else if (StringUtils.isEmpty(user.getPassword())) {
+        } else if (!StringUtils.hasText(user.getPassword())) {
             return "password 不能为空";
         }
-
         user.setCreateTime(LocalDateTime.now());
         return orderDAO.insert(user);
     }
