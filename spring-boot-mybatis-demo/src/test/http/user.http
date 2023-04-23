@@ -1,0 +1,12 @@
+### 获取用户列表
+GET 127.0.0.1:8082/user/list
+Accept: application/json
+
+### 添加用户
+POST 127.0.0.1:8082/user
+Content-Type: application/json
+
+{
+  "name": "bluefrog",
+  "password": "12345678"
+}
