@@ -1,0 +1,33 @@
+### 发送消息 qos 0
+POST 127.0.0.1:8082/publish
+Content-Type: application/json
+
+{
+  "qos": 0,
+  "retained": true,
+  "topic": "topic/test",
+  "message": "bbbb qos0"
+}
+
+
+### 发送消息 qos 1
+POST 127.0.0.1:8082/publish
+Content-Type: application/json
+
+{
+  "qos": 1,
+  "retained": true,
+  "topic": "topic/test",
+  "message": "aaaa qos1"
+}
+
+### 发送消息 qos 2
+POST 127.0.0.1:8082/publish
+Content-Type: application/json
+
+{
+  "qos": 2,
+  "retained": true,
+  "topic": "topic/test",
+  "message": "cccc qos2"
+}

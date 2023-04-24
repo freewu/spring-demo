@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+debug: true
+
+mqtt:
+  host: tcp://192.168.5.132:1883 # MQTT-服务端地址
+  username: mqtt # MQTT-服务端用户名
+  password: mqtt1234 # MQTT-服务端密码
+  clean-session: false # MQTT-是否清理 session
+  client-id: mqtt_publish # MQTT-当前客户端的唯一标识
+  default-topic: test # 当前客户端的默认主题
+  timeout: 1000 # 发送超时时间
+  keepalive: 10 # 心跳时间
+  connectionTimeout: 3000 # 连接超时时间
