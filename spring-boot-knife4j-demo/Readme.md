@@ -154,15 +154,26 @@
 
 ```
 
-## Swagger3	注解说明
+## OpenAPI3	注解说明(Swagger3)
 ```
 @Tag(name = “接口类描述”)	Controller 类
-@Operation(summary =“接口方法描述”)	Controller 方法
+@Operation(summary = “接口方法描述”)	Controller 方法
 @Parameters	Controller 方法
 @Parameter(description=“参数描述”)	Controller 方法上 @Parameters 里Controller 方法的参数
 @Parameter(hidden = true) @Operation(hidden = true)@Hidden	排除或隐藏api
 @Schema	DTO实体DTO实体属性
 ```
+
+## 对应关系
+| swagger2           | OpenAPI 3                                                      | 注解位置                    | 说明  |
+|--------------------|----------------------------------------------------------------|-------------------------|-----|
+| @Api               | @Tag                                                           | Controller              |     |
+| @ApiOperation      | @Operation                                                     | Controller方法            |     |
+| @ApiImplicitParams | @Parameters                                                    | Controller方法            |     |
+| @ApiImplicitParam  | @Parameter                                                     | @Parameters             |     |
+| @ApiIgnore         | @Parameter(hidden = true)/ @Operation(hidden = true) / @Hidden | Controller/Controller方法 |     |
+| @ApiModel          | @Schema                                                        | DTO类                    |     |
+| @ApiModelProperty  | @Schema                                                        | DTO属性                   |     |
 
 
 
